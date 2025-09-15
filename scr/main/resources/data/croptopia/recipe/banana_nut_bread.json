@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:nuts"
+    },
+    {
+      "item": "croptopia:banana"
+    },
+    {
+      "item": "croptopia:flour"
+    },
+    {
+      "item": "croptopia:cinnamon"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "croptopia:banana_nut_bread",
+    "count": 2
+  }
+}

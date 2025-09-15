@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:peanut"
+		}
+	],
+	"result": [
+		{
+			"item": { 
+				"id": "croptopia:peanut_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": { 
+				"id": "croptopia:peanut_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

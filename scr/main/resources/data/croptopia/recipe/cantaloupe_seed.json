@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:cantaloupe"
+		}
+	],
+	"result": [
+		{
+			"item": { 
+				"id": "croptopia:cantaloupe_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": { 
+				"id": "croptopia:cantaloupe_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

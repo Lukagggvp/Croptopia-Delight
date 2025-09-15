@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:kiwi"
+		}
+	],
+	"result": [
+		{
+			"item": {
+				"id": "croptopia:kiwi_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": {
+				"id": "croptopia:kiwi_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:currant"
+		}
+	],
+	"result": [
+		{
+			"item": { 
+				"id": "croptopia:currant_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": { 
+				"id": "croptopia:currant_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:olive"
+		}
+	],
+	"result": [
+		{
+			"item": { 
+				"id": "croptopia:olive_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": { 
+				"id": "croptopia:olive_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:meat_replacements"
+    },
+    {
+      "tag": "croptopiadelight:rice"
+    },
+    {
+      "tag": "croptopiadelight:chilepepper"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "croptopia:chicken_and_rice"
+  }
+}

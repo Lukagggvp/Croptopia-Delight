@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:onion"
+		}
+	],
+	"result": [
+		{
+			"item": { 
+				"id": "croptopia:onion_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": { 
+				"id": "croptopia:onion_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

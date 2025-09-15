@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:blackberry"
+		}
+	],
+	"result": [
+		{
+			"item": {
+				"id": "croptopia:blackberry_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": {
+				"id": "croptopia:blackberry_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

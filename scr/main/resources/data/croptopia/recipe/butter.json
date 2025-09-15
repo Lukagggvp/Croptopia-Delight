@@ -1,0 +1,17 @@
+{
+    "type": "farmersdelight:cooking",
+    "cookingtime": 200,
+    "experience": 1.0,
+    "ingredients": [
+        {
+            "tag": "croptopiadelight:milks"
+        },
+        {
+            "item": "croptopia:salt"
+        }
+    ],
+    "recipe_book_tab": "meals",
+    "result": {
+        "id": "croptopia:butter"
+    }
+}

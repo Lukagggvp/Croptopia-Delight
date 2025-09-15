@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:broccoli"
+		}
+	],
+	"result": [
+		{
+			"item":  { 
+				"id": "croptopia:broccoli_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item":  { 
+				"id": "croptopia:broccoli_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

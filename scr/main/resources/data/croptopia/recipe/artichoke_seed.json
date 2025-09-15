@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:artichoke"
+		}
+	],
+	"result": [
+		{
+			"item": {
+				"id": "croptopia:artichoke_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": {
+				"id": "croptopia:artichoke_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

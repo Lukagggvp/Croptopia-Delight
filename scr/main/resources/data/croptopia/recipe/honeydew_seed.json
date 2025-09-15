@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:honeydew"
+		}
+	],
+	"result": [
+		{
+			"item": {
+				"id": "croptopia:honeydew_seed"
+			}
+		},
+		{
+			"chance": 0.5,
+			"item": {
+				"id": "croptopia:honeydew_seed"
+			}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}
