@@ -1,0 +1,14 @@
+{
+  "replacement": false,
+  "values": [
+    "minecraft:chicken",
+    "minecraft:beef",
+    "minecraft:porkchop",
+    "croptopia:tofu",
+    "farmersdelight:minced_beef",
+    "farmersdelight:chicken_cuts",
+    "farmersdelight:bacon",
+    "farmersdelight:mutton_chops",
+    "farmersdelight:ham"
+  ]
+}

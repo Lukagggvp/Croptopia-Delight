@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:tomato"
+    },
+    {
+      "tag": "croptopiadelight:onion"
+    },
+	{
+      "tag": "croptopiadelight:garlic"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "item": "farmersdelight:tomato_sauce"
+  }
+}
