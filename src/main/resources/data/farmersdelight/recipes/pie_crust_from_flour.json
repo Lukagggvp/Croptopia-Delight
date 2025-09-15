@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:milks"
+    },
+    {
+      "item": "croptopia:flour"
+    }
+  ],
+  "result": {
+    "item": "farmersdelight:pie_crust"
+  }
+}
