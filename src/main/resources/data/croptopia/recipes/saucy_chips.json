@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopia:sauces"
+    },
+    {
+      "item": "croptopia:potato_chips"
+    }
+  ],
+  "result": {
+    "item": "croptopia:saucy_chips"
+  }
+}

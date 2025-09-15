@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:onion"
+    },
+	{
+      "tag": "croptopiadelight:chilepepper"
+    },
+	{
+      "item": "croptopia:flour"
+    },
+	{
+      "item": "croptopia:salt"
+    },
+	{
+      "item": "croptopia:corn_husk"
+    },
+	{
+      "tag": "croptopiadelight:raw_chicken"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tamales"
+  }
+}

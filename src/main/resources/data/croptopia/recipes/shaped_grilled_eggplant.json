@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "croptopia:eggplant"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:garlic"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "item": "croptopia:pepper"
+    },
+    {
+      "item": "croptopia:salt"
+    },
+    {
+      "item": "croptopia:paprika"
+    }
+  ],
+  "result": {
+    "item": "croptopia:grilled_eggplant"
+  }
+}

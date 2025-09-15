@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:rum"
+    },
+	{
+      "item": "croptopia:raisins"
+    },
+	{
+      "tag": "croptopiadelight:milks"
+    },
+	{
+      "item": "minecraft:sugar"
+    },
+	{
+      "item": "minecraft:egg"
+    },
+	{
+      "item": "minecraft:snowball"
+    }
+  ],
+  "result": {
+    "item": "croptopia:rum_raisin_ice_cream"
+  }
+}

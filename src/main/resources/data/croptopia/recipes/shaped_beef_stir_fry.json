@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:garlic"
+    },
+    {
+      "tag": "croptopiadelight:broccoli"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "item": "croptopia:soy_sauce"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:beef"
+    }
+  ],
+  "result": {
+    "item": "croptopia:beef_stir_fry"
+  }
+}

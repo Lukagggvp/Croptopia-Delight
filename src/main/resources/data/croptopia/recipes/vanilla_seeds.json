@@ -1,0 +1,21 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:vanilla"
+		}
+	],
+	"result": [
+		{
+			"item": "croptopia:vanilla_seeds"
+		},
+		{
+			"chance": 0.5,
+			"count": 1,
+			"item": "croptopia:vanilla_seeds"
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

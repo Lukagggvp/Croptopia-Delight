@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:vanilla"
+    },
+	{
+      "item": "croptopia:yam"
+    },
+	{
+      "tag": "croptopiadelight:milks"
+    },
+	{
+      "tag": "croptopiadelight:milks"
+    }
+  ],
+  "result": {
+    "item": "croptopia:yam_jam"
+  }
+}

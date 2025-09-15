@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:broccoli"
+    },
+    {
+      "tag": "croptopiadelight:broccoli"
+    },
+    {
+      "tag": "croptopiadelight:water_bottles"
+    }
+  ],
+  "result": {
+    "item": "croptopia:steamed_broccoli"
+  }
+}

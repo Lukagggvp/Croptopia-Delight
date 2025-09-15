@@ -1,0 +1,31 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "croptopia:eggplant"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:basil"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "item": "croptopia:pepper"
+    },
+    {
+      "item": "croptopia:cheese"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "result": {
+    "item": "croptopia:eggplant_parmesan"
+  }
+}
