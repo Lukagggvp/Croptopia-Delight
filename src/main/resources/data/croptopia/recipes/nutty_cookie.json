@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:nuts"
+    },
+    {
+      "tag": "croptopiadelight:nuts"
+    },
+    {
+      "item": "croptopia:flour"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "croptopia:nutty_cookie",
+    "count": 4
+  }
+}

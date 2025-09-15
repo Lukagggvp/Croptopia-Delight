@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "croptopia:dough"
+    }
+  ],
+  "result": [
+    {
+      "item": "croptopia:noodle"
+    }
+  ],
+  "tool": {
+    "tag": "croptopiadelight:tools/knives"
+  }
+}

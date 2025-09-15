@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:flour"
+    },
+	{
+      "item": "croptopia:olive_oil"
+    },
+	{
+      "tag": "croptopiadelight:onion"
+    },
+	{
+      "item": "croptopia:salt"
+    }
+  ],
+  "result": {
+    "item": "croptopia:onion_rings"
+  }
+}

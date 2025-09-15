@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:lettuce"
+    },
+    {
+      "tag": "croptopiadelight:meat_replacements"
+    },
+    {
+      "item": "croptopia:dough"
+    },
+    {
+      "item": "minecraft:egg"
+    }
+  ],
+  "result": {
+    "item": "croptopia:egg_roll"
+  }
+}

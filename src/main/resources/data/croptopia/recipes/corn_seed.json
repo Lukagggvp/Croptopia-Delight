@@ -1,0 +1,31 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:corn"
+		}
+	],
+	"result": [
+		{
+			"item": "croptopia:corn_seed"
+		},
+		{
+			"chance": 0.5,
+			"count": 1,
+			"item": "croptopia:corn_seed"
+		},
+		{
+			"chance": 0.25,
+			"count": 1,
+			"item": "croptopia:corn_husk"
+		},
+		{
+			"chance": 0.1,
+			"count": 1,
+			"item": "croptopia:flour"
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}
