@@ -1,0 +1,24 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:yam"
+		}
+	],
+	"result": [
+		{
+			"item": { 
+        		"id": "croptopia:yam_seed"
+      		}
+		},
+		{
+			"chance": 0.5,
+			"item": { 
+        		"id": "croptopia:yam_seed"
+      		}
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

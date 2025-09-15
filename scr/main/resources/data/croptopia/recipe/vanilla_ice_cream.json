@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:vanilla"
+    },
+	{
+      "tag": "croptopiadelight:milks"
+    },
+	{
+      "item": "minecraft:sugar"
+    },
+	{
+      "item": "minecraft:egg"
+    },
+	{
+      "item": "minecraft:snowball"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "croptopia:vanilla_ice_cream"
+  }
+}

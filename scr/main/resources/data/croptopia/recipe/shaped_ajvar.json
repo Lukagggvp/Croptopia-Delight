@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:pepper"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "item": "croptopia:salt"
+    },
+    {
+      "tag": "croptopiadelight:bellpepper"
+    },
+    {
+      "tag": "croptopiadelight:eggplant"
+    },
+    {
+      "tag": "croptopiadelight:garlic"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "croptopia:ajvar"
+  }
+}

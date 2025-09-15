@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+	{
+      "item": "croptopia:olive_oil"
+    },
+	{
+      "item": "croptopia:salt"
+    },
+	{
+      "item": "croptopia:sweetpotato"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "croptopia:sweet_potato_fries"
+  }
+}

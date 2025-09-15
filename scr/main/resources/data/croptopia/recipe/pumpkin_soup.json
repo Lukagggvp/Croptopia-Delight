@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "farmersdelight:pumpkin_slice"
+    },
+	{
+      "tag": "croptopiadelight:garlic"
+    },
+	{
+      "item": "croptopia:pepper"
+    },
+	{
+      "tag": "croptopiadelight:onion"
+    },
+	{
+      "item": "croptopia:salt"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "croptopia:pumpkin_soup"
+  }
+}
