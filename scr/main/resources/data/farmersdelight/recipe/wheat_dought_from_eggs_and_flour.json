@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "croptopia:flour"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "farmersdelight:wheat_dough"
+  }
+}

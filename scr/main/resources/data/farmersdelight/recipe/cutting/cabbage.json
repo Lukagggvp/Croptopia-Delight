@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:cabbage_in_leaves"
+    }
+  ],
+  "tool": {
+    "tag": "croptopiadelight:tools/knives"
+  },
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "farmersdelight:cabbage_leaf"
+      }
+    }
+  ]
+}
