@@ -1,0 +1,21 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:squash"
+		}
+	],
+	"result": [
+		{
+			"item": "croptopia:squash_seed"
+		},
+		{
+			"chance": 0.5,
+			"count": 1,
+			"item": "croptopia:squash_seed"
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

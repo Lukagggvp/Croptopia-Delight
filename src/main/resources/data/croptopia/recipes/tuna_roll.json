@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:rice"
+    },
+    {
+      "tag": "croptopiadelight:onion"
+    },
+    {
+      "tag": "croptopiadelight:seagrass"
+    },
+    {
+      "item": "croptopia:tuna"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tuna_roll",
+    "count": 2
+  }
+}

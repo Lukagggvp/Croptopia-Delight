@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:salt"
+    },
+	{
+      "tag": "croptopiadelight:rice"
+    },
+	{
+      "tag": "croptopiadelight:water_bottles"
+    }
+  ],
+  "result": {
+    "item": "croptopia:steamed_rice"
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:spinach"
+		}
+	],
+	"result": [
+		{
+			"item": "croptopia:spinach_seed"
+		},
+		{
+			"chance": 0.5,
+			"count": 1,
+			"item": "croptopia:spinach_seed"
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

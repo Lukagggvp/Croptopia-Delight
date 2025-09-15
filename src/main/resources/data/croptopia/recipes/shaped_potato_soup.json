@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:greenonion"
+    },
+    {
+      "tag": "croptopiadelight:water_bottles"
+    },
+    {
+      "item": "croptopia:bacon"
+    },
+    {
+      "item": "croptopia:flour"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "result": {
+    "item": "croptopia:potato_soup"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:raisins"
+    },
+    {
+      "item": "croptopia:oatmeal"
+    },
+    {
+      "item": "croptopia:flour"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "croptopia:raisin_oatmeal_cookie",
+    "count": 4
+  }
+}

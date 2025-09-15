@@ -1,0 +1,21 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:tomato"
+		}
+	],
+	"result": [
+		{
+			"item": "croptopia:tomato_seed"
+		},
+		{
+			"chance": 0.5,
+			"count": 1,
+			"item": "croptopia:tomato_seed"
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

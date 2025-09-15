@@ -1,0 +1,21 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:rhubarb"
+		}
+	],
+	"result": [
+		{
+			"item": "croptopia:rhubarb_seed"
+		},
+		{
+			"chance": 0.5,
+			"count": 1,
+			"item": "croptopia:rhubarb_seed"
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

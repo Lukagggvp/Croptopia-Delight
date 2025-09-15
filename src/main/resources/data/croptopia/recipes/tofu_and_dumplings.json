@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "croptopia:dough"
+    },
+	{
+      "item": "croptopia:chile_pepper"
+    },
+	{
+      "item": "croptopia:tofu"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tofu_and_dumplings"
+  }
+}

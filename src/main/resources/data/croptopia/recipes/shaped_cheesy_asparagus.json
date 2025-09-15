@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:asparagus"
+    },
+    {
+      "item": "croptopia:cheese"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "item": "croptopia:pepper"
+    }
+  ],
+  "result": {
+    "item": "croptopia:cheesy_asparagus"
+  }
+}

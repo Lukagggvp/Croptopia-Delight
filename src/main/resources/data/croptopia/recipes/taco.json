@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "croptopia:tortilla"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:meat_replacements"
+    },
+    {
+      "tag": "croptopiadelight:lettuce"
+    },
+    {
+      "item": "croptopia:cheese"
+    },
+    {
+      "item": "croptopia:salsa"
+    }
+  ],
+  "result": {
+    "item": "croptopia:taco"
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+		{
+			"tag": "croptopiadelight:saguaro"
+		}
+	],
+	"result": [
+		{
+			"item": "croptopia:saguaro_seed"
+		},
+		{
+			"chance": 0.5,
+			"count": 1,
+			"item": "croptopia:saguaro_seed"
+		}
+	],
+	"tool": {
+		"tag": "croptopiadelight:tools/knives"
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:garlic"
+    },
+    {
+      "tag": "croptopiadelight:broccoli"
+    },
+    {
+      "tag": "croptopiadelight:bellpepper"
+    },
+    {
+      "tag": "croptopiadelight:greenonion"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:stir_fry"
+  }
+}
