@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:fruits"
+    },
+    {
+      "tag": "croptopiadelight:fruits"
+    },
+    {
+      "tag": "croptopiadelight:fruits"
+    },
+    {
+      "tag": "croptopiadelight:milks"
+    },
+    {
+      "item": "minecraft:ice"
+    }
+  ],
+  "result": {
+    "item": "croptopia:fruit_smoothie"
+  }
+}

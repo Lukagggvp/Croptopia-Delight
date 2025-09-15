@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:tomato"
+    },
+    {
+      "tag": "croptopiadelight:raw_chicken"
+    },
+    {
+      "item": "croptopia:lemon"
+    },
+	{
+      "item": "croptopia:chile_pepper"
+    }
+  ],
+  "result": {
+    "item": "croptopia:lemon_chicken"
+  }
+}

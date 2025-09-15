@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:cucumber"
+    },
+    {
+      "tag": "croptopiadelight:spinach"
+    },
+    {
+      "tag": "croptopiadelight:lettuce"
+    }
+  ],
+  "result": {
+    "item": "croptopia:cucumber_salad"
+  }
+}

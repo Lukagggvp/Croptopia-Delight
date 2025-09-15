@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:water_bottles"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "croptopiadelight:rice"
+    },
+    {
+      "item": "croptopia:almond"
+    },
+    {
+      "item": "croptopia:lime"
+    },
+    {
+      "item": "croptopia:cinnamon"
+    }
+  ],
+  "result": {
+    "item": "croptopia:horchata",
+    "count": 3
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:vanilla"
+    },
+    {
+      "item": "croptopia:kumquat"
+    },
+    {
+      "item": "croptopia:kumquat"
+    },
+    {
+      "item": "croptopia:kumquat"
+    },
+    {
+      "item": "croptopia:kumquat"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "item": "croptopia:candied_kumquats",
+    "count": 4
+  }
+}

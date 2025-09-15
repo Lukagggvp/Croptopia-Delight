@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:cucumber"
+    },
+    {
+      "tag": "croptopiadelight:olive"
+    },
+    {
+      "tag": "croptopiadelight:garlic"
+    },
+    {
+      "item": "croptopia:toast"
+    }
+  ],
+  "result": {
+    "item": "croptopia:caesar_salad"
+  }
+}

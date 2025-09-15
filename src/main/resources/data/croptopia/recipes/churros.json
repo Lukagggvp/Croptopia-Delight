@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:milks"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "croptopia:cinnamon"
+    },
+    {
+      "item": "croptopia:flour"
+    }
+  ],
+  "result": {
+    "item": "croptopia:churros",
+    "count": 3
+  }
+}

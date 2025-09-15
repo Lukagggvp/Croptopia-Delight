@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "croptopiadelight:raw_chicken"
+    },
+    {
+      "tag": "croptopiadelight:chilepepper"
+    },
+	{
+      "item": "croptopia:olive_oil"
+    },
+	{
+      "item": "croptopia:noodle"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chicken_and_noodles"
+  }
+}
