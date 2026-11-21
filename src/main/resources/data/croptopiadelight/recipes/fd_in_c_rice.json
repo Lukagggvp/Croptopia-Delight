@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "result": {
+    "item": "croptopia:rice_seed",
+    "count": 1
+  }
+}

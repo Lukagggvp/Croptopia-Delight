@@ -1,3 +1,6 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
 plugins {
     id 'eclipse'
     id 'idea'
@@ -75,6 +78,7 @@ tasks.named('processResources', ProcessResources).configure {
 }
 
 tasks.named('jar', Jar).configure {
+    archiveClassifier = 'forge-1.16.5-1.20.1'
     manifest {
         attributes(["Specification-Title"     : mod_id,
                     "Specification-Vendor"    : mod_authors,
@@ -90,4 +94,312 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+// ============================================================================
+// Multi-version & Universal (NeoForge + Fabric) Build Pipeline
+// ============================================================================
+
+def convertItemStack = { Object raw ->
+    if (raw instanceof Map) {
+        def out = new LinkedHashMap()
+        out.id = raw.id ?: raw.item
+        out.count = raw.count != null ? raw.count : 1
+        return out
+    }
+    return raw
+}
+
+def convertInlineIngredient
+convertInlineIngredient = { Object raw ->
+    if (raw instanceof Map) {
+        if (raw.containsKey('item')) return raw.item.toString()
+        if (raw.containsKey('tag')) return "#${raw.tag}".toString()
+        return raw
+    }
+    if (raw instanceof List) {
+        return raw.collect { convertInlineIngredient(it) }
+    }
+    return raw
+}
+
+def transformRecipeJson = { File srcFile, boolean inlineIngredients ->
+    def slurper = new JsonSlurper()
+    def data = new LinkedHashMap(slurper.parse(srcFile) as Map)
+    def type = data.type?.toString()
+
+    if (type == 'farmersdelight:cooking') {
+        if (data.containsKey('result')) {
+            data.result = convertItemStack(data.result)
+        }
+        if (data.containsKey('container')) {
+            data.container = convertItemStack(data.container)
+        }
+        if (inlineIngredients && data.ingredients instanceof List) {
+            data.ingredients = data.ingredients.collect { convertInlineIngredient(it) }
+        }
+    } else if (type == 'farmersdelight:cutting') {
+        if (data.result instanceof List) {
+            data.result = data.result.collect { entry ->
+                if (entry instanceof Map) {
+                    def out = new LinkedHashMap()
+                    if (entry.containsKey('chance')) {
+                        out.chance = entry.chance
+                    }
+                    out.item = convertItemStack(entry)
+                    return out
+                }
+                return entry
+            }
+        }
+        if (inlineIngredients) {
+            if (data.ingredients instanceof List) {
+                data.ingredients = data.ingredients.collect { convertInlineIngredient(it) }
+            }
+            if (data.containsKey('tool')) {
+                data.tool = convertInlineIngredient(data.tool)
+            }
+        }
+    } else if (type == 'minecraft:crafting_shapeless' || type == 'minecraft:crafting_shaped') {
+        if (data.containsKey('result')) {
+            data.result = convertItemStack(data.result)
+        }
+        if (inlineIngredients) {
+            if (data.ingredients instanceof List) {
+                data.ingredients = data.ingredients.collect { convertInlineIngredient(it) }
+            }
+            if (data.key instanceof Map) {
+                def newKey = new LinkedHashMap()
+                data.key.each { k, v -> newKey[k] = convertInlineIngredient(v) }
+                data.key = newKey
+            }
+        }
+    }
+
+    return JsonOutput.prettyPrint(JsonOutput.toJson(data)) + "\n"
+}
+
+def generateFabricModJson = { String mcRange ->
+    def authorsList = mod_authors.split(',').collect { it.trim() }.findAll { !it.isEmpty() }
+    def obj = [
+        schemaVersion: 1,
+        id           : mod_id,
+        version      : mod_version,
+        name         : mod_name,
+        description  : mod_description,
+        authors      : authorsList,
+        contact      : [homepage: mod_url],
+        license      : mod_license,
+        environment  : '*',
+        depends      : [
+            minecraft     : mcRange,
+            croptopia     : '*',
+            farmersdelight: '*'
+        ]
+    ]
+    return JsonOutput.prettyPrint(JsonOutput.toJson(obj)) + "\n"
+}
+
+def generateNeoForgeModsToml = { String mcRange, String neoRange ->
+    return """modLoader = "lowcodefml"
+loaderVersion = "[1,)"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+displayURL = "${mod_url}"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neoRange}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${mcRange}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "croptopia"
+type = "required"
+versionRange = "(,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "farmersdelight"
+type = "required"
+versionRange = "(,)"
+ordering = "NONE"
+side = "BOTH"
+"""
+}
+
+def registerUniversalBuild = { String taskSuffix, Map cfg ->
+    def stageDir = layout.buildDirectory.dir("multiversion/${taskSuffix}")
+
+    def prepareTask = tasks.register("prepare${taskSuffix}") {
+        inputs.dir('src/main/resources/data')
+        if (cfg.includeModernTags) {
+            inputs.dir('src/modern/resources/data')
+        }
+        outputs.dir(stageDir)
+
+        doLast {
+            def outRoot = stageDir.get().asFile
+            project.delete(outRoot)
+            outRoot.mkdirs()
+
+            // 1. Write pack.mcmeta
+            new File(outRoot, 'pack.mcmeta').setText(JsonOutput.prettyPrint(JsonOutput.toJson(cfg.packMcmeta)) + "\n", 'UTF-8')
+
+            // 2. Write fabric.mod.json
+            if (cfg.fabricMcRange) {
+                new File(outRoot, 'fabric.mod.json').setText(generateFabricModJson(cfg.fabricMcRange), 'UTF-8')
+            }
+
+            // 3. Write META-INF/neoforge.mods.toml
+            if (cfg.neoForgeMcRange) {
+                def metaInf = new File(outRoot, 'META-INF')
+                metaInf.mkdirs()
+                new File(metaInf, 'neoforge.mods.toml').setText(
+                    generateNeoForgeModsToml(cfg.neoForgeMcRange, cfg.neoForgeRange), 'UTF-8'
+                )
+            }
+
+            // 4. Copy & transform base data/
+            def srcData = file('src/main/resources/data')
+            srcData.eachFileRecurse { f ->
+                if (f.isFile()) {
+                    def rel = srcData.toPath().relativize(f.toPath()).toString().replace('\\', '/')
+                    def isRecipe = rel.contains('/recipes/')
+                    def isItemTag = rel.contains('/tags/items/')
+
+                    def targetRel = rel
+                    if (cfg.singularFolders) {
+                        targetRel = targetRel.replace('/recipes/', '/recipe/').replace('/tags/items/', '/tags/item/')
+                    }
+
+                    def destFile = new File(outRoot, "data/${targetRel}")
+                    destFile.parentFile.mkdirs()
+
+                    if (cfg.modernRecipes && isRecipe && f.name.endsWith('.json')) {
+                        destFile.setText(transformRecipeJson(f, cfg.inlineIngredients as boolean), 'UTF-8')
+                    } else {
+                        destFile.bytes = f.bytes
+                    }
+                }
+            }
+
+            // 5. Copy modern c: bridge tags for 1.21+ / 26.x
+            if (cfg.includeModernTags) {
+                def modernData = file('src/modern/resources/data')
+                if (modernData.exists()) {
+                    modernData.eachFileRecurse { f ->
+                        if (f.isFile()) {
+                            def rel = modernData.toPath().relativize(f.toPath()).toString().replace('\\', '/')
+                            def destFile = new File(outRoot, "data/${rel}")
+                            destFile.parentFile.mkdirs()
+                            destFile.bytes = f.bytes
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return tasks.register("jar${taskSuffix}", Jar) {
+        group = 'build'
+        description = "Builds ${cfg.classifier} JAR"
+        dependsOn(prepareTask)
+        archiveBaseName = mod_id
+        archiveVersion = mod_version
+        archiveClassifier = cfg.classifier
+        from(stageDir)
+        manifest {
+            attributes([
+                "Specification-Title"   : mod_id,
+                "Specification-Vendor"  : mod_authors,
+                "Specification-Version" : "1",
+                "Implementation-Title"  : project.name,
+                "Implementation-Version": mod_version,
+                "Implementation-Vendor" : mod_authors
+            ])
+        }
+    }
+}
+
+def jarFabricLegacy = registerUniversalBuild('FabricLegacy', [
+    classifier       : 'fabric-1.16.5-1.20.1',
+    fabricMcRange    : '>=1.16.5 <=1.20.1',
+    neoForgeMcRange  : null,
+    singularFolders  : false,
+    modernRecipes    : false,
+    inlineIngredients: false,
+    includeModernTags: false,
+    packMcmeta       : [pack: [description: "${mod_name} resources", pack_format: 6]]
+])
+
+def jarUniversal1211 = registerUniversalBuild('Universal1211', [
+    classifier       : 'neoforge-fabric-1.21-1.21.1',
+    fabricMcRange    : '>=1.21 <=1.21.1',
+    neoForgeMcRange  : '[1.21,1.21.2)',
+    neoForgeRange    : '[21.0,)',
+    singularFolders  : true,
+    modernRecipes    : true,
+    inlineIngredients: false,
+    includeModernTags: true,
+    packMcmeta       : [pack: [description: "${mod_name} resources", pack_format: 48]]
+])
+
+def jarUniversal121x = registerUniversalBuild('Universal121x', [
+    classifier       : 'neoforge-fabric-1.21.2-1.21.11',
+    fabricMcRange    : '>=1.21.2 <1.22',
+    neoForgeMcRange  : '[1.21.2,1.22)',
+    neoForgeRange    : '[21.2,)',
+    singularFolders  : true,
+    modernRecipes    : true,
+    inlineIngredients: true,
+    includeModernTags: true,
+    packMcmeta       : [pack: [
+        description      : "${mod_name} resources",
+        pack_format      : 57,
+        supported_formats: [57, 94],
+        min_format       : [57, 0],
+        max_format       : [94, 0]
+    ]]
+])
+
+def jarUniversal26x = registerUniversalBuild('Universal26x', [
+    classifier       : 'neoforge-fabric-26.1-26.3',
+    fabricMcRange    : '>=26.1 <26.4',
+    neoForgeMcRange  : '[26.1,26.4)',
+    neoForgeRange    : '[26.1,)',
+    singularFolders  : true,
+    modernRecipes    : true,
+    inlineIngredients: true,
+    includeModernTags: true,
+    packMcmeta       : [pack: [
+        description: "${mod_name} resources",
+        min_format : [101, 0],
+        max_format : [121, 0]
+    ]]
+])
+
+tasks.register('buildModern') {
+    group = 'build'
+    description = 'Builds all Fabric and universal NeoForge+Fabric multi-version JARs (1.16.5-26.3)'
+    dependsOn(jarFabricLegacy, jarUniversal1211, jarUniversal121x, jarUniversal26x)
+}
+
+tasks.named('assemble').configure {
+    dependsOn(jarFabricLegacy, jarUniversal1211, jarUniversal121x, jarUniversal26x)
 }

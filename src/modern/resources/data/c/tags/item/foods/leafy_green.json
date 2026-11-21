@@ -1,0 +1,21 @@
+{
+    "replace":  false,
+    "values":  [
+                   {
+                       "id":  "croptopia:cabbage",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:lettuce",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:spinach",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:kale",
+                       "required":  false
+                   }
+               ]
+}

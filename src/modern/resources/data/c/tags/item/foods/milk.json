@@ -1,0 +1,13 @@
+{
+    "replace":  false,
+    "values":  [
+                   {
+                       "id":  "croptopia:milk_bottle",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:soy_milk",
+                       "required":  false
+                   }
+               ]
+}

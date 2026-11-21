@@ -1,0 +1,33 @@
+{
+    "replace":  false,
+    "values":  [
+                   {
+                       "id":  "croptopia:blackberry",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:blueberry",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:cranberry",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:currant",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:elderberry",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:raspberry",
+                       "required":  false
+                   },
+                   {
+                       "id":  "croptopia:strawberry",
+                       "required":  false
+                   }
+               ]
+}

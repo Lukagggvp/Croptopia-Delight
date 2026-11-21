@@ -6,6 +6,18 @@
 		"farmersdelight:iron_knife",
 		"farmersdelight:golden_knife",
 		"farmersdelight:diamond_knife",
-		"farmersdelight:netherite_knife"
+		"farmersdelight:netherite_knife",
+		{
+			"id": "#c:tools/knife",
+			"required": false
+		},
+		{
+			"id": "#farmersdelight:tools/knives",
+			"required": false
+		},
+		{
+			"id": "#forge:tools/knives",
+			"required": false
+		}
 	]
 }
